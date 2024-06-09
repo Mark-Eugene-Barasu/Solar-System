@@ -1,0 +1,13 @@
+@mixin earth_and_moon() {
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+}
+
+@mixin earth_and_moon_BEFORE() {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}

@@ -1,0 +1,6 @@
+// gives the rotation effect
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}

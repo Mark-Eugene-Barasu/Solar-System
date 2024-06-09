@@ -1,0 +1,81 @@
+@import "./mixings";
+@import "./colors";
+@import "./animation_effects";
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color_of_space;
+    overflow: hidden;
+
+    .container {
+        font-size: 10px;
+        width: 40em;
+        height: 40em;
+        position: relative;
+
+        .sun {
+            position: absolute;
+            top: 15em;
+            left: 15em;
+            width: 10em;
+            height: 10em;
+            background-color: $sun_color;
+            border-radius: 50%;
+            box-shadow: 0 0 3em $solar_glow;
+        }
+
+        .earth {
+            // common properties for both earth and moon
+           @include earth_and_moon;
+
+            // for earth and moon
+            top: 5em;
+            left: 5em;
+            width: 30em;
+            height: 30em;
+            animation: orbit 36.5s linear infinite;
+
+            &::before {
+                // common properties for both earth::before and moon::before
+                @include earth_and_moon_BEFORE;
+
+                // for earth only
+                top: 2.8em;
+                right: 2.8em;
+                width: 3em;
+                height: 3em;
+                background-color: $earth_color;
+
+            }
+
+            .moon {
+            // common properties for both earth and moon
+            @include earth_and_moon;
+
+                // for moon only
+                top: 0;
+                right: 0;
+                width: 8em;
+                height: 8em;
+                animation: orbit 2.7s linear infinite;
+            
+                &::before {
+                    // common properties for both earth::before and moon::before
+                    @include earth_and_moon_BEFORE;
+
+                    // for moon::before only 
+                    top: 0.8em;
+                    right: 0.2em;
+                    width: 1.2em;
+                    height: 1.2em;
+                    background-color: $moon_color;
+                }
+            }
+        }
+    }
+}
+
