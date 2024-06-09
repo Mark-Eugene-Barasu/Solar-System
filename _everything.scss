@@ -11,11 +11,20 @@ body {
     background-color: $color_of_space;
     overflow: hidden;
 
+
+
     .container {
         font-size: 10px;
         width: 40em;
         height: 40em;
         position: relative;
+
+        p {
+            // nothing coded here because
+            // every design needed was done directly
+            // into the index.html file
+            color: white;
+        }
 
         .sun {
             position: absolute;
